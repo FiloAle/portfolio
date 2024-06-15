@@ -23,8 +23,8 @@ export async function generateMetadata({
     image,
   } = post.metadata;
   let ogImage = image
-    ? `https://leerob.io${image}`
-    : `https://leerob.io/og?title=${title}`;
+    ? `https://filippoalessandrini.com${image}`
+    : `https://filippoalessandrini.com/og?title=${title}`;
 
   return {
     title,
@@ -34,7 +34,7 @@ export async function generateMetadata({
       description,
       type: 'article',
       publishedTime,
-      url: `https://leerob.io/blog/${post.slug}`,
+      url: `https://filippoalessandrini.com/blog/${post.slug}`,
       images: [
         {
           url: ogImage,
@@ -60,26 +60,13 @@ function formatDate(date: string) {
   let timeDifference = Math.abs(currentDate - targetDate);
   let daysAgo = Math.floor(timeDifference / (1000 * 60 * 60 * 24));
   
-  let fullDate = new Date(date).toLocaleString('en-us', {
-    month: 'long',
+  let fullDate = new Date(date).toLocaleString('en-uk', {
     day: 'numeric',
+    month: 'long',
     year: 'numeric',
   });
 
-  if (daysAgo < 1) {
-    return 'Today';
-  } else if (daysAgo < 7) {
-    return `${fullDate} (${daysAgo}d ago)`;
-  } else if (daysAgo < 30) {
-    const weeksAgo = Math.floor(daysAgo / 7)
-    return `${fullDate} (${weeksAgo}w ago)`;
-  } else if (daysAgo < 365) {
-    const monthsAgo = Math.floor(daysAgo / 30)
-    return `${fullDate} (${monthsAgo}mo ago)`;
-  } else {
-    const yearsAgo = Math.floor(daysAgo / 365)
-    return `${fullDate} (${yearsAgo}y ago)`;
-  }
+  return fullDate;
 }
 
 export default function Blog({ params }) {
@@ -103,12 +90,12 @@ export default function Blog({ params }) {
             dateModified: post.metadata.publishedAt,
             description: post.metadata.summary,
             image: post.metadata.image
-              ? `https://leerob.io${post.metadata.image}`
-              : `https://leerob.io/og?title=${post.metadata.title}`,
-            url: `https://leerob.io/blog/${post.slug}`,
+              ? `https://filippoalessandrini.com${post.metadata.image}`
+              : `https://filippoalessandrini.com/og?title=${post.metadata.title}`,
+            url: `https://filippoalessandrini.com/blog/${post.slug}`,
             author: {
               '@type': 'Person',
-              name: 'Lee Robinson',
+              name: 'Filippo Alessandrini',
             },
           }),
         }}

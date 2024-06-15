@@ -1,5 +1,4 @@
 import { Suspense } from 'react';
-import { unstable_noStore as noStore } from 'next/cache';
 import Link from 'next/link';
 import Image from 'next/image';
 import smashing from 'public/images/home/smashing.jpg';
@@ -8,13 +7,9 @@ import reactathon from 'public/images/home/reactathon.jpg';
 import ship from 'public/images/home/ship.jpg';
 import filming from 'public/images/home/filming.jpg';
 import meetups from 'public/images/home/meetups.jpg';
-import vercel from 'public/images/home/vercel.jpg';
-import avatar from 'app/avatar.jpg';
 import ViewCounter from 'app/blog/view-counter';
 import { PreloadResources } from 'app/preload';
 import {
-  getLeeYouTubeSubs,
-  getVercelYouTubeSubs,
   getViewsCount,
 } from 'app/db/queries';
 
@@ -23,7 +18,7 @@ function Badge(props) {
     <a
       {...props}
       target="_blank"
-      className="inline-flex items-center rounded border border-neutral-200 bg-neutral-50 p-1 text-sm leading-4 text-neutral-900 no-underline dark:border-neutral-700 dark:bg-neutral-800 dark:text-neutral-100"
+      className="inline-flex items-center rounded-full border border-neutral-200 bg-neutral-50 px-2 py-1 text-sm leading-4 text-neutral-900 no-underline dark:border-neutral-700 dark:bg-neutral-800 dark:text-neutral-100"
     />
   );
 }
@@ -42,64 +37,6 @@ function ArrowIcon() {
         fill="currentColor"
       />
     </svg>
-  );
-}
-
-function ChannelLink({ img, link, name }) {
-  return (
-    <div className="group flex w-full">
-      <a
-        href={link}
-        target="_blank"
-        className="flex w-full items-center justify-between rounded border border-neutral-200 bg-neutral-50 px-3 py-4 dark:border-neutral-700 dark:bg-neutral-800"
-      >
-        <div className="flex items-center space-x-3">
-          <div className="relative h-16">
-            <Image
-              alt={name}
-              src={img}
-              height={64}
-              width={64}
-              sizes="33vw"
-              className="h-16 w-16 rounded-full border border-neutral-200 dark:border-neutral-700"
-              priority
-            />
-            <div className="relative -right-10 -top-6 inline-flex h-6 w-6 items-center rounded-full border border-neutral-200 bg-white p-1 dark:border-neutral-700">
-              <svg width="15" height="11" role="img" aria-label="YouTube logo">
-                <use href="/sprite.svg#youtube" />
-              </svg>
-            </div>
-          </div>
-          <div className="flex flex-col">
-            <p className="font-medium text-neutral-900 dark:text-neutral-100">
-              {name}
-            </p>
-            <Suspense fallback={<p className="h-6" />}>
-              <Subs name={name} />
-            </Suspense>
-          </div>
-        </div>
-        <div className="transform text-neutral-700 transition-transform duration-300 group-hover:-rotate-12 dark:text-neutral-300">
-          <ArrowIcon />
-        </div>
-      </a>
-    </div>
-  );
-}
-
-async function Subs({ name }: { name: string }) {
-  noStore();
-  let subscribers;
-  if (name === '@leerob') {
-    subscribers = await getLeeYouTubeSubs();
-  } else {
-    subscribers = await getVercelYouTubeSubs();
-  }
-
-  return (
-    <p className="text-neutral-600 dark:text-neutral-400">
-      {subscribers} subscribers
-    </p>
   );
 }
 
@@ -136,51 +73,20 @@ export default function Page() {
     <section>
       <PreloadResources />
       <h1 className="mb-8 text-2xl font-medium tracking-tighter">
-        hey, I'm leerob 👋
+        Ciao! I'm Filippo 👋
       </h1>
       <p className="prose prose-neutral dark:prose-invert">
-        {`I'm a frontend developer, optimist, and community builder. I currently `}
-        <Link href="/work">work</Link>
-        {` as the VP of Product at `}
+        {`I'm a graphic designer and front-end developer. 👨🏻‍💻`}
+        <br/>
+        {`I'm currently `}
+        <Link href="/work">studying</Link>
+        {` Communication Design at `}
         <span className="not-prose">
-          <Badge href="https://vercel.com/home">
-            <svg
-              width="13"
-              height="11"
-              role="img"
-              aria-label="Vercel logo"
-              className="mr-1 inline-flex"
-            >
-              <use href="/sprite.svg#vercel" />
-            </svg>
-            Vercel
+          <Badge href="https://polimi.it">
+            Politecnico di Milano
           </Badge>
         </span>
-        {`, where I help teach the `}
-        <Badge href="https://nextjs.org">
-          <img
-            alt="Next.js logomark"
-            src="/next-logo.svg"
-            className="!mr-1"
-            width="14"
-            height="14"
-          />
-          Next.js
-        </Badge>
-        {` community, an open-source web framework built with `}
-        <Badge href="https://react.dev">
-          <svg
-            width="14"
-            height="14"
-            role="img"
-            aria-label="React logo"
-            className="!mr-1"
-          >
-            <use href="/sprite.svg#react" />
-          </svg>
-          React
-        </Badge>
-        .
+        {`, where I am going to graduate this July. In my free time I often like to code random things like a real geek. 🤓`}
       </p>
       <div className="grid grid-cols-2 grid-rows-4 sm:grid-rows-3 sm:grid-cols-3 gap-4 my-8">
         <div className="relative h-40">
@@ -246,30 +152,31 @@ export default function Page() {
       </div>
       <div className="prose prose-neutral dark:prose-invert">
         <p>
-          I create educational content for developers, teaching them about web
-          development, JavaScript and TypeScript, React and Next.js, and more.
-          This comes in all forms: blog posts, videos, tweets, conference talks,
-          and workshops. You can watch some of my favorites below.
+          I usually design brand identities and guidelines, but as you can see from
+          this portfolio I often like to build some websites too!
+          In my spare time you'd probably find me watching YouTube videos
+          or just making fancy stuff with my 3D printer.
         </p>
-      </div>
-      <div className="my-8 flex w-full flex-col space-x-0 space-y-4 sm:flex-row sm:space-x-4 sm:space-y-0">
-        <ChannelLink
-          img={avatar}
-          name="@leerob"
-          link="https://www.youtube.com/@leerob"
-        />
-        <ChannelLink
-          img={vercel}
-          name="@vercel"
-          link="https://www.youtube.com/@vercelhq"
-        />
       </div>
       <div className="prose prose-neutral dark:prose-invert">
         <p>
-          Over the past decade, I've written content on my blog and newsletter.
-          I try to keep things simple. You'll find writing about technologies
-          I'm interested in at the time, or how I'm learning and growing in my
-          career, sharing knowledge along the way.
+          {`Over the past five years I've developed several projects both in
+          graphic design and coding fields; you'll find some along the way,
+          but if you'd still like to see more of them just visit my personal `}
+          <span className="not-prose">
+            <Badge href="https://github.com/FiloAle">
+            <svg
+              width="12"
+              height="12"
+              role="img"
+              aria-label="GitHub logo"
+              className="mr-1 inline-flex"
+            >
+              <use href="/sprite.svg#github" />
+            </svg>
+              GitHub profile
+            </Badge>
+          </span>.
         </p>
       </div>
       <div className="my-8 flex w-full flex-col space-y-4">
@@ -282,53 +189,10 @@ export default function Page() {
       </div>
       <div className="prose prose-neutral dark:prose-invert">
         <p>
-          I invest small angel checks into early stage startups building tools
-          for developers.
-        </p>
-      </div>
-      <div className="my-8 flex h-14 w-full flex-row space-x-2 overflow-x-auto">
-        <div className="flex items-center justify-between rounded border border-neutral-200 bg-neutral-50 px-3 py-4 dark:border-neutral-700 dark:bg-neutral-800">
-          <a href="https://linear.app">
-            <svg width="78" height="20" role="img" aria-label="Linear logo">
-              <use href="/sprite.svg#linear" />
-            </svg>
-          </a>
-        </div>
-        <div className="flex items-center justify-between rounded border border-neutral-200 bg-neutral-50 px-3 py-4 dark:border-neutral-700 dark:bg-neutral-800">
-          <a href="https://supabase.com">
-            <svg width="100" height="19" role="img" aria-label="Supabase logo">
-              <use href="/sprite.svg#supabase" />
-            </svg>
-          </a>
-        </div>
-        <div className="flex items-center justify-between rounded border border-neutral-200 bg-neutral-50 px-3 py-4 dark:border-neutral-700 dark:bg-neutral-800">
-          <a href="https://www.makeswift.com/blog/makeswift-is-joining-bigcommerce">
-            <svg width="96" height="19" role="img" aria-label="Makeswift logo">
-              <use href="/sprite.svg#makeswift" />
-            </svg>
-          </a>
-        </div>
-        <div className="flex items-center justify-between rounded border border-neutral-200 bg-neutral-50 px-3 py-4 dark:border-neutral-700 dark:bg-neutral-800">
-          <a href="https://resend.com">
-            <svg width="70" height="17" role="img" aria-label="Resend logo">
-              <use href="/sprite.svg#resend" />
-            </svg>
-          </a>
-        </div>
-        <div className="flex items-center justify-between rounded border border-neutral-200 bg-neutral-50 px-3 py-4 dark:border-neutral-700 dark:bg-neutral-800">
-          <a href="https://bun.sh">
-            <svg width="35" height="27" role="img" aria-label="Bun logo">
-              <use href="/sprite.svg#bun" />
-            </svg>
-          </a>
-        </div>
-      </div>
-      <div className="prose prose-neutral dark:prose-invert">
-        <p>
-          I've worked with and advised companies on{' '}
-          <Link href="/blog/developer-marketing">developer marketing</Link>,{' '}
-          <Link href="/blog/devrel">developer relations</Link>, building
-          open-source communities, product-led growth, and more.
+          I've already worked with and advised a company on{' '}
+          <Link href="/blog/developer-marketing">marketing</Link>{' and '}
+          <Link href="/blog/devrel">online communication</Link>, reaching
+          broader audiences and building a long-lasting corporate identity.
         </p>
       </div>
       <ul className="font-sm mt-8 flex flex-col space-x-0 space-y-2 text-neutral-600 md:flex-row md:space-x-4 md:space-y-0 dark:text-neutral-300">
@@ -337,7 +201,7 @@ export default function Page() {
             className="flex items-center transition-all hover:text-neutral-800 dark:hover:text-neutral-100"
             rel="noopener noreferrer"
             target="_blank"
-            href="https://twitter.com/leeerob"
+            href="https://instagram.com/_filippoalessandrini_"
           >
             <ArrowIcon />
             <p className="ml-2 h-7">follow me</p>
@@ -347,11 +211,10 @@ export default function Page() {
           <a
             className="flex items-center transition-all hover:text-neutral-800 dark:hover:text-neutral-100"
             rel="noopener noreferrer"
-            target="_blank"
-            href="https://leerob.substack.com"
+            href="mailto:ciao@filippoalessandrini.com"
           >
             <ArrowIcon />
-            <p className="ml-2 h-7">get email updates</p>
+            <p className="ml-2 h-7">text me</p>
           </a>
         </li>
       </ul>

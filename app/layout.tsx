@@ -8,17 +8,17 @@ import { SpeedInsights } from '@vercel/speed-insights/next';
 import { SandpackCSS } from './blog/[slug]/sandpack';
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://leerob.io'),
+  metadataBase: new URL('https://filippoalessandrini.com'),
   title: {
-    default: 'Lee Robinson',
-    template: '%s | Lee Robinson',
+    default: 'Filippo Alessandrini',
+    template: '%s | Filippo Alessandrini',
   },
-  description: 'Developer, writer, and creator.',
+  description: 'Designer, developer and dreamer.',
   openGraph: {
-    title: 'Lee Robinson',
-    description: 'Developer, writer, and creator.',
-    url: 'https://leerob.io',
-    siteName: 'Lee Robinson',
+    title: 'Filippo Alessandrini',
+    description: 'Designer, developer and dreamer.',
+    url: 'https://filippoalessandrini.com',
+    siteName: 'Filippo Alessandrini',
     locale: 'en_US',
     type: 'website',
   },
@@ -34,12 +34,8 @@ export const metadata: Metadata = {
     },
   },
   twitter: {
-    title: 'Lee Robinson',
+    title: 'Filippo Alessandrini',
     card: 'summary_large_image',
-  },
-  verification: {
-    google: 'eZSdmzAXlLkKhNJzfgwDqWORghxnJ8qR9_CHdAh5-xw',
-    yandex: '14d2e73487fa6c71',
   },
 };
 
