@@ -1,8 +1,8 @@
 import { getBlogPosts } from 'app/db/projects';
 
 export default async function sitemap() {
-  let blogs = getBlogPosts().map((post) => ({
-    url: `https://filippoalessandrini.com/blog/${post.slug}`,
+  let projects = getBlogPosts().map((post) => ({
+    url: `https://filippoalessandrini.com/projects/${post.slug}`,
     lastModified: post.metadata.publishedAt,
   }));
 
@@ -11,5 +11,5 @@ export default async function sitemap() {
     lastModified: new Date().toISOString().split('T')[0],
   }));
 
-  return [...routes, ...blogs];
+  return [...routes, ...projects];
 }
