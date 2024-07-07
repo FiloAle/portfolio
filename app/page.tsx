@@ -1,18 +1,24 @@
-import { Suspense } from 'react';
-import Link from 'next/link';
-import Image from 'next/image';
-import smashing from 'public/images/home/smashing.jpg';
-import looper from 'public/images/home/poster_looper.png';
-import summit from 'public/images/home/summit.jpg';
-import giardino from 'public/images/home/poster_giardino.png';
-import filming from 'public/images/home/filming.jpg';
-import meetups from 'public/images/home/meetups.jpg';
-import { AcademicCapIcon, HeartIcon, EnvelopeIcon, CheckBadgeIcon, CodeBracketIcon, SwatchIcon } from '@heroicons/react/24/solid'
-import ViewCounter from 'app/blog/view-counter';
-import { PreloadResources } from 'app/preload';
 import {
-  getViewsCount,
-} from 'app/db/queries';
+  AcademicCapIcon,
+  CheckBadgeIcon,
+  CommandLineIcon,
+  EnvelopeIcon,
+  HeartIcon,
+  SwatchIcon,
+} from '@heroicons/react/24/solid';
+import { PreloadResources } from 'app/preload';
+import Image from 'next/image';
+import Link from 'next/link';
+import giardinoLogo from 'public/images/home/giardino_logo.png';
+import giardinoPoster from 'public/images/home/giardino_poster.png';
+import looperLogo from 'public/images/home/looper_logo.png';
+import looperPoster from 'public/images/home/looper_poster.png';
+import portorossoLogo from 'public/images/home/portorosso_logo.png';
+import portorossoTickets from 'public/images/home/portorosso_tickets.png';
+import padiglioneLogo from 'public/images/home/padiglione_logo.png';
+import padiglioneCopertina from 'public/images/home/padiglione_copertina.png';
+import heepLogo from 'public/images/home/heep_logo.png';
+import heepQubo from 'public/images/home/heep_qubo.png';
 
 function Badge(props) {
   return (
@@ -45,16 +51,13 @@ function BlogLink({ slug, name }) {
   return (
     <div className="group">
       <a
-        href={`/blog/${slug}`}
+        href={`/projects/${slug}`}
         className="flex w-full items-center justify-between rounded border border-neutral-200 bg-neutral-50 p-4 dark:border-neutral-700 dark:bg-neutral-800"
       >
         <div className="flex flex-col">
           <p className="font-medium text-neutral-900 dark:text-neutral-100">
             {name}
           </p>
-          <Suspense fallback={<p className="h-6" />}>
-            <Views slug={slug} />
-          </Suspense>
         </div>
         <div className="transform text-neutral-700 transition-transform duration-300 group-hover:rotate-45 dark:text-neutral-300">
           <ArrowIcon />
@@ -64,107 +67,132 @@ function BlogLink({ slug, name }) {
   );
 }
 
-async function Views({ slug }: { slug: string }) {
-  let views = await getViewsCount();
-  return <ViewCounter allViews={views} slug={slug} />;
-}
-
 export default function Page() {
   return (
     <section>
       <PreloadResources />
-      <h1 className="mb-8 text-2xl font-medium">
-        Ciao! I'm Filippo 👋
-      </h1>
+      <h1 className="mb-8 text-2xl font-medium">Ciao! I'm <span className="transition-all hover:text-blue-600 dark:hover:text-blue-400">Filippo</span> 👋</h1>
       <p className="prose prose-neutral dark:prose-invert">
-        {`I'm a graphic designer and front-end developer. 👨🏻‍💻`}
-        <br/>
-        {`I'm currently `}
+        {`If you don't know me yet, I'm a graphic designer and front-end developer. 👨🏻‍💻 I'm currently `}
         <Link href="/work">studying</Link>
         {` Communication Design at `}
         <span className="not-prose">
           <Badge href="https://polimi.it">
-            <AcademicCapIcon className="h-3.5 w-3.5 me-1"/>
+            <AcademicCapIcon className="h-3.5 w-3.5 me-1" />
             Politecnico di Milano
           </Badge>
         </span>
-        {`, where I am going to graduate this July, but don't forget I often find myself coding random things like a real geek! 🤓
+        {`, where I have already graduated once; but don't forget I often find myself coding random things like a real geek! 🤓
         Down below you can see some of my most recent projects: take a look! 👀`}
       </p>
-      <div className="grid grid-cols-2 grid-rows-4 sm:grid-rows-3 sm:grid-cols-3 gap-4 my-8">
-        <Link className="relative h-40" href="/work">
+      <div className="grid grid-cols-2 grid-rows-3 sm:grid-rows-4 sm:grid-cols-4 gap-4 my-8">
+      <Link className="group relative col-span-2 row-span-2" href="/projects">
           <Image
-            alt="Me speaking on stage at React Summit about the future of Next.js"
-            title="Me speaking on stage at React Summit about the future of Next.js"
-            src={summit}
+            alt="HEEP logo"
+            title="HEEP logo"
+            src={heepLogo}
             fill
             sizes="(max-width: 768px) 213px, 33vw"
             priority
-            className="rounded-lg object-cover transition-all hover:scale-105"
+            className="opacity-100 rounded-lg object-cover sm:object-center transition-all group-hover:scale-105 group-hover:opacity-0"
+          />
+          <Image
+            alt="A prototype of Qubo made by HEEP"
+            title="A prototype of Qubo made by HEEP"
+            src={heepQubo}
+            fill
+            sizes="(max-width: 768px) 213px, 33vw"
+            priority
+            className="opacity-0 rounded-lg object-cover sm:object-center transition-all group-hover:scale-105 group-hover:opacity-100"
           />
         </Link>
-        <Link className="relative sm:row-span-2 row-span-1" href="/work">
+        <Link className="group relative col-span-2 h-40" href="/projects">
+        <Image
+            alt="Il Giardino di Lipari logo"
+            title="Il Giardino di Lipari logo"
+            src={giardinoLogo}
+            fill
+            sizes="(max-width: 768px) 213px, 33vw"
+            priority
+            className="opacity-100 rounded-lg object-cover sm:object-center transition-all group-hover:scale-105 group-hover:opacity-0"
+          />
+          <Image
+            alt="A visual application of Il Giardino di Lipari's brand identity"
+            title="A visual application of Il Giardino di Lipari's brand identity"
+            src={giardinoPoster}
+            fill
+            sizes="(max-width: 768px) 213px, 33vw"
+            priority
+            className="opacity-0 rounded-lg object-cover sm:object-center transition-all group-hover:scale-105 group-hover:opacity-100"
+          />
+        </Link>
+        <Link className="group relative col-span-1 sm:col-span-2 max-sm:h-40 row-span-2" href="/projects">
+          <Image
+            alt="Looper logo"
+            title="Looper logo"
+            src={looperLogo}
+            fill
+            sizes="(max-width: 768px) 213px, 33vw"
+            priority
+            className="opacity-100 rounded-lg object-cover sm:object-center transition-all group-hover:scale-105 group-hover:opacity-0"
+          />
           <Image
             alt="One of a series of posters made for the Looper project"
             title="One of a series of posters made for the Looper project"
-            src={looper}
+            src={looperPoster}
             fill
             sizes="(max-width: 768px) 213px, 33vw"
             priority
-            className="rounded-lg object-cover object-top sm:object-center transition-all hover:scale-105"
+            className="opacity-0 rounded-lg object-cover sm:object-center transition-all group-hover:scale-105 group-hover:opacity-100"
           />
         </Link>
-        <Link className="relative" href="/work">
+        <Link className="group relative col-span-1 sm:col-span-2 max-sm:h-40 row-span-2" href="/projects">
           <Image
-            alt="A visual application of Il Giardino di Lipari's new brand identity"
-            title="A visual application of Il Giardino di Lipari's new brand identity"
-            src={giardino}
+            alt="A photo of the final book"
+            title="A photo of the final book"
+            src={padiglioneLogo}
             fill
             sizes="(max-width: 768px) 213px, 33vw"
             priority
-            className="rounded-lg object-cover transition-all hover:scale-105"
+            className="opacity-100 rounded-lg object-cover sm:object-center transition-all group-hover:scale-105 group-hover:opacity-0"
+          />
+          <Image
+            alt="The front cover of the book written for the project"
+            title="The front cover of the book written for the project"
+            src={padiglioneCopertina}
+            fill
+            sizes="(max-width: 768px) 213px, 33vw"
+            priority
+            className="opacity-0 rounded-lg object-cover sm:object-center transition-all group-hover:scale-105 group-hover:opacity-100"
           />
         </Link>
-        <Link className="relative row-span-2" href="/work">
-          <Image
-            alt="Me, Lydia, and Delba filming the Next.js Conf keynote"
-            title="Me, Lydia, and Delba filming the Next.js Conf keynote"
-            src={filming}
+        <Link className="group relative col-span-1 sm:col-span-2 h-40 max-sm:hidden" href="/projects">
+        <Image
+            alt="Portorosso logo"
+            title="Portorosso logo"
+            src={portorossoLogo}
             fill
             sizes="(max-width: 768px) 213px, 33vw"
             priority
-            className="rounded-lg object-cover sm:object-center transition-all hover:scale-105"
+            className="opacity-100 rounded-lg object-cover sm:object-center transition-all group-hover:scale-105 group-hover:opacity-0"
           />
-        </Link>
-        <Link className="relative row-span-2" href="/work">
           <Image
-            alt="My badge on top of a pile of badges from a Vercel meetup we held"
-            title="My badge on top of a pile of badges from a Vercel meetup we held"
-            src={meetups}
+            alt="Train tickets made for Portorosso's new brand identity"
+            title="Train tickets made for Portorosso's new brand identity"
+            src={portorossoTickets}
             fill
             sizes="(max-width: 768px) 213px, 33vw"
             priority
-            className="rounded-lg object-cover transition-all hover:scale-105"
-          />
-        </Link>
-        <Link className="relative h-40" href="/work">
-          <Image
-            alt="Me standing on stage at SmashingConf giving a talk about my optimism for the web"
-            title="Me standing on stage at SmashingConf giving a talk about my optimism for the web"
-            src={smashing}
-            fill
-            sizes="(max-width: 768px) 213px, 33vw"
-            priority
-            className="rounded-lg object-cover transition-all hover:scale-105"
+            className="opacity-0 rounded-lg object-cover sm:object-center transition-all group-hover:scale-105 group-hover:opacity-100"
           />
         </Link>
       </div>
       <div className="prose prose-neutral dark:prose-invert">
         <p>
-          I usually design brand identities and guidelines, but as you can see from
-          this portfolio I reeeally like to build some fancy websites too!
-          In my spare time you'd probably find me watching YouTube videos
-          or just making creative stuff with my 3D printer.
+          As you can see, I usually design brand identities, 
+          but I reeeally like to build some fancy websites too!
+          In my spare time you'd probably find me watching YouTube videos or
+          just making creative stuff with my 3D printer.
         </p>
       </div>
       <div className="prose prose-neutral dark:prose-invert">
@@ -174,17 +202,18 @@ export default function Page() {
           but if you'd still like to see more of them just check out my personal `}
           <span className="not-prose">
             <Badge href="https://github.com/FiloAle">
-            <CodeBracketIcon className="h-3.5 w-3.5 me-1"/>
+              <CommandLineIcon className="h-3.5 w-3.5 me-1" />
               GitHub repos
             </Badge>
           </span>
           {` or my `}
           <span className="not-prose">
             <Badge href="https://behance.net/filippoalessan1">
-            <SwatchIcon className="h-3.5 w-3.5 me-1"/>
+              <SwatchIcon className="h-3.5 w-3.5 me-1" />
               Behance projects
             </Badge>
-          </span>.
+          </span>
+          .
         </p>
       </div>
       <div className="my-8 flex w-full flex-col space-y-4">
@@ -198,7 +227,8 @@ export default function Page() {
       <div className="prose prose-neutral dark:prose-invert">
         <p>
           I've already worked with and advised a company on{' '}
-          <Link href="/blog/developer-marketing">marketing</Link>{' and '}
+          <Link href="/blog/developer-marketing">marketing</Link>
+          {' and '}
           <Link href="/blog/devrel">online communication</Link>, reaching
           broader audiences and building a long-lasting corporate identity.
         </p>
@@ -206,33 +236,33 @@ export default function Page() {
       <ul className="font-sm mt-8 flex flex-col gap-2 text-neutral-600 md:flex-row md:space-x-4 md:space-y-0 dark:text-neutral-300">
         <li>
           <a
-            className="flex items-center transition-all hover:text-neutral-800 dark:hover:text-neutral-100"
+            className="flex items-center transition-all hover:text-blue-600 dark:hover:text-blue-400"
             rel="noopener noreferrer"
             target="_blank"
             href="https://instagram.com/_filippoalessandrini_"
           >
-            <CheckBadgeIcon className="h-4 w-4 mb-1"/>
+            <CheckBadgeIcon className="h-4 w-4 mb-1" />
             <p className="ml-1 h-7">follow me</p>
           </a>
         </li>
         <li>
           <a
-            className="flex items-center transition-all hover:text-neutral-800 dark:hover:text-neutral-100"
+            className="flex items-center transition-all hover:text-amber-600 dark:hover:text-amber-400"
             rel="noopener noreferrer"
             href="mailto:ciao@filippoalessandrini.com"
           >
-            <EnvelopeIcon className="h-4 w-4 mb-1"/>
+            <EnvelopeIcon className="h-4 w-4 mb-1" />
             <p className="ml-1 h-7">text me</p>
           </a>
         </li>
         <li>
           <a
-            className="flex items-center transition-all hover:text-neutral-800 dark:hover:text-neutral-100"
+            className="flex items-center transition-all hover:text-red-600 dark:hover:text-red-400"
             rel="noopener noreferrer"
             target="_blank"
             href="https://buymeacoffee.com/filippoalessandrini"
           >
-            <HeartIcon className="h-4 w-4 mb-1"/>
+            <HeartIcon className="h-4 w-4 mb-1" />
             <p className="ml-1 h-7">buy me a coffee</p>
           </a>
         </li>

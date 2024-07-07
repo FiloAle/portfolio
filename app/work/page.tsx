@@ -9,11 +9,11 @@ export const metadata: Metadata = {
 export default function WorkPage() {
   return (
     <section>
-      <h1 className="font-medium text-2xl mb-8">My work</h1>
+      <h1 className="font-medium text-2xl mb-8">My work experience</h1>
       <div className="prose prose-neutral dark:prose-invert">
         <p>
           On a mission to build products both my clients and their users{' '}
-          <Link href="/blog/developer-experience">love</Link>, and along the
+          <Link href="/blog/developer-experience">love</Link> and, along the
           way, shape the future of web and graphic design.
           Here's a summary of my experiences so far.
         </p>
