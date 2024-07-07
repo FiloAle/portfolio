@@ -224,9 +224,9 @@ export default function Page() {
       <div className="prose prose-neutral dark:prose-invert">
         <p>
           I've already worked with and advised a company on{' '}
-          <Link href="/blog/developer-marketing">marketing</Link>
+          <Link href="/projects/developer-marketing">marketing</Link>
           {' and '}
-          <Link href="/blog/devrel">online communication</Link>, reaching
+          <Link href="/projects/devrel">online communication</Link>, reaching
           broader audiences and building a long-lasting corporate identity.
         </p>
       </div>
