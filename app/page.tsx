@@ -83,7 +83,7 @@ export default function Page() {
         Down below you can see some of my most recent projects: take a look! 👀`}
       </p>
       <div className="grid grid-cols-2 grid-rows-3 sm:grid-rows-4 sm:grid-cols-4 gap-4 my-8">
-      <Link className="group relative col-span-2 row-span-2" href="/projects">
+      <Link className="group relative col-span-2 row-span-2" href="/projects/HEEP">
           <Image
             alt="HEEP logo"
             title="HEEP logo"

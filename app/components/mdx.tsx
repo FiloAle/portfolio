@@ -5,6 +5,7 @@ import { TweetComponent } from './tweet';
 import { highlight } from 'sugar-high';
 import React from 'react';
 import { LiveCode } from './sandpack';
+import { useClient } from '@codesandbox/sandpack-react/contexts/utils/useClient';
 
 function Table({ data }) {
   let headers = data.headers.map((header, index) => (
@@ -48,6 +49,18 @@ function CustomLink(props) {
 
 function RoundedImage(props) {
   return <Image alt={props.alt} className="rounded-lg" {...props} />;
+}
+
+function Video (props) {
+  'use client'
+  return (
+    <div>
+      <video autoPlay muted loop playsInline width={props.width} height={props.height} controls preload="none" className="rounded-lg">
+        <source src={props.src} type="video/mp4"/>
+        Your browser does not support the video tag.
+      </video>
+    </div>
+  );
 }
 
 function Callout(props) {
@@ -163,6 +176,7 @@ let components = {
   code: Code,
   Table,
   LiveCode,
+  Video,
 };
 
 export function CustomMDX(props) {

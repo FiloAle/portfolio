@@ -38,6 +38,8 @@ export default function BlogPage() {
               <Suspense fallback={<p className="h-6" />}>
               <p className="h-6 text-neutral-600 dark:text-neutral-400">
                 {formatDate(post.metadata.publishedAt)}
+                {' – '}
+                {post.metadata.summary}
               </p>
               </Suspense>
             </div>
