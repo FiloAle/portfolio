@@ -79,7 +79,7 @@ export default function Page() {
             Politecnico di Milano
           </Badge>
         </span>
-        {`; but don't forget I often find myself coding random things like a real geek! 🤓
+        {`, but don't forget I often find myself coding random things like a real geek! 🤓
         Down below you can see some of my most recent projects: take a look! 👀`}
       </p>
       <div className="grid grid-cols-2 grid-rows-3 sm:grid-rows-4 sm:grid-cols-4 gap-4 my-8">
