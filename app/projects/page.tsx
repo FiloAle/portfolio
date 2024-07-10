@@ -1,7 +1,6 @@
 import Link from 'next/link';
 import { Suspense } from 'react';
 import { getBlogPosts } from 'app/db/projects';
-import { formatDate } from './[slug]/page';
 
 export const metadata = {
   title: 'Projects',
@@ -16,6 +15,12 @@ export default function BlogPage() {
       <h1 className="font-medium text-2xl mb-8">
         My recent projects
       </h1>
+      <div className="prose prose-neutral dark:prose-invert">
+        <p>
+          Here you can find some of my latest projects, ordered by the most recent.
+        </p>
+      </div>
+      <hr className="my-6 border-neutral-100 dark:border-neutral-800" />
       {allBlogs
         .sort((a, b) => {
           if (
@@ -37,8 +42,6 @@ export default function BlogPage() {
               </p>
               <Suspense fallback={<p className="h-6" />}>
               <p className="h-6 text-neutral-600 dark:text-neutral-400">
-                {formatDate(post.metadata.publishedAt)}
-                {' – '}
                 {post.metadata.summary}
               </p>
               </Suspense>
