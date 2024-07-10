@@ -71,7 +71,7 @@ export default function Page() {
       <h1 className="mb-8 text-2xl font-medium">Ciao! I'm <span className="transition-all hover:text-blue-600 dark:hover:text-blue-400">Filippo</span> 👋</h1>
       <p className="prose prose-neutral dark:prose-invert">
         {`If you don't know me yet, I'm a graphic designer and front-end developer. 👨🏻‍💻 I'm currently `}
-        <Link href="/work">studying</Link>
+        <Link href="/experience">studying</Link>
         {` Communication Design at `}
         <span className="not-prose">
           <Badge href="https://polimi.it">
@@ -224,7 +224,7 @@ export default function Page() {
       <div className="prose prose-neutral dark:prose-invert">
         <p>
           I've already worked with and advised a company on{' '}
-          <Link href="/work">marketing and communication</Link>, reaching
+          <Link href="/experience">marketing and communication</Link>, reaching
           broader audiences and building a long-lasting corporate identity.
         </p>
       </div>
