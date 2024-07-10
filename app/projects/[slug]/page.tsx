@@ -47,7 +47,7 @@ export async function generateMetadata({
   };
 }
 
-export function formatDate(date: string) {
+function formatDate(date: string) {
   noStore();
   
   let fullDate = new Date(date).toLocaleString('en-US', {
