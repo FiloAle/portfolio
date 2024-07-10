@@ -59,6 +59,7 @@ export default function RootLayout({
       )}
     >
       <head>
+        <link rel="shortcut icon" type="image/x-icon" href="favicon.ico"/>
         <SandpackCSS />
       </head>
       <body className="antialiased max-w-2xl mb-20 flex flex-col sm:flex-row mx-4 mt-8 sm:mx-auto">
