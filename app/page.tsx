@@ -215,18 +215,16 @@ export default function Page() {
       </div>
       <div className="my-8 flex w-full flex-col space-y-4">
         <BlogLink
-          name="What Makes A Great Developer Experience?"
-          slug="developer-experience"
+          name="The HEEP Project"
+          slug="HEEP"
         />
-        <BlogLink name="What is Developer Relations?" slug="devrel" />
-        <BlogLink name="The Story of Heroku" slug="heroku" />
+        <BlogLink name="The making of Looper" slug="Looper" />
+        <BlogLink name="Il Giardino di Lipari's brand identity" slug="Il-Giardino-di-Lipari" />
       </div>
       <div className="prose prose-neutral dark:prose-invert">
         <p>
           I've already worked with and advised a company on{' '}
-          <Link href="/projects/developer-marketing">marketing</Link>
-          {' and '}
-          <Link href="/projects/devrel">online communication</Link>, reaching
+          <Link href="/work">marketing and communication</Link>, reaching
           broader audiences and building a long-lasting corporate identity.
         </p>
       </div>
