@@ -103,7 +103,7 @@ export default function Page() {
             className="opacity-0 rounded-lg object-cover sm:object-center transition-all group-hover:scale-105 group-hover:opacity-100"
           />
         </Link>
-        <Link className="group relative col-span-2 h-40" href="/projects">
+        <Link className="group relative col-span-2 h-40" href="/projects/Il-Giardino-di-Lipari">
         <Image
             alt="Il Giardino di Lipari logo"
             title="Il Giardino di Lipari logo"
@@ -123,7 +123,7 @@ export default function Page() {
             className="opacity-0 rounded-lg object-cover sm:object-center transition-all group-hover:scale-105 group-hover:opacity-100"
           />
         </Link>
-        <Link className="group relative col-span-1 sm:col-span-2 max-sm:h-40 row-span-2" href="/projects">
+        <Link className="group relative col-span-1 sm:col-span-2 max-sm:h-40 row-span-2" href="/projects/Looper">
           <Image
             alt="Looper logo"
             title="Looper logo"
@@ -143,7 +143,7 @@ export default function Page() {
             className="opacity-0 rounded-lg object-cover sm:object-center transition-all group-hover:scale-105 group-hover:opacity-100"
           />
         </Link>
-        <Link className="group relative col-span-1 sm:col-span-2 max-sm:h-40 row-span-2" href="/projects">
+        <Link className="group relative col-span-1 sm:col-span-2 max-sm:h-40 row-span-2" href="/projects/Padiglione-nel-Parco-Sempione">
           <Image
             alt="A photo of the final book"
             title="A photo of the final book"
@@ -163,7 +163,7 @@ export default function Page() {
             className="opacity-0 rounded-lg object-cover sm:object-center transition-all group-hover:scale-105 group-hover:opacity-100"
           />
         </Link>
-        <Link className="group relative col-span-1 sm:col-span-2 h-40 max-sm:hidden" href="/projects">
+        <Link className="group relative col-span-1 sm:col-span-2 h-40 max-sm:hidden" href="/projects/Portorosso">
         <Image
             alt="Portorosso logo"
             title="Portorosso logo"

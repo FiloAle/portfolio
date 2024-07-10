@@ -56,7 +56,7 @@ function Video (props) {
   return (
     <div>
       <video autoPlay muted loop playsInline width={props.width} height={props.height} controls preload="none" className="rounded-lg">
-        <source src={props.src} type="video/mp4"/>
+        <source src={'/videos/' + props.src} type="video/mp4"/>
         Your browser does not support the video tag.
       </video>
     </div>
