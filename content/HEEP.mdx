@@ -40,6 +40,7 @@ of people in HEEP's community, in order to save as many potatoes as possible fro
 HEEP's users from all over the world are able to contribute to the cause by buying and using Qubo, powering on their favorite modules and lighting up their homes
 while helping the global community, at the same time, in reaching its goal.
 
+
 ## Programming Arduino and its WebApp
 
 We, as HEEP, have also realized a proper working prototype of Qubo using Arduino and other technologies such as PHP to create the relative WebApp.
@@ -65,4 +66,44 @@ if(digitalRead(15) == HIGH) {
   }
   ...
 }
+```
+
+This is an extract of code from QuboScreen, a module of the prototype based on ESP32 that sends Qubo's electric production data to a database.
+The database has a key role in making the experience feel complete, in fact it stores a series of informations that every user
+can freely access from their personal area on <a href="https://heepenergia.it" rel="noopener noreferrer" target="_blank">heepenergia.it</a>,
+a sort of a WebApp currently optimized for mobile displays only. By registering on the website, each user is able associate their personal Qubo 
+usage session with their own account and see the statistics being updated in real time, thanks to QuboScreen and its database integration.
+
+<Image
+  alt={`HEEP's WebApp`}
+  title={`HEEP's WebApp`}
+  src={`/images/HEEP/app.jpeg`}
+  width={3653}
+  height={2435}
+/>
+
+Down below, on the other hand, you can read a snippet of PHP code from the login page that checks users' data.
+
+```php
+if(isset($_SESSION['userid'])) {
+  header('location:user_page.php');
+}
+
+if(isset($_POST['login'])) {
+  $username = mysqli_real_escape_string($conn, $_POST['username']);
+  $pass = md5($_POST['password']);
+
+  $select = "SELECT * FROM users WHERE username = '$username' && password = '$pass'";
+  $result = mysqli_query($conn, $select);
+
+  if(mysqli_num_rows($result) > 0) {
+    $userData = $result->fetch_array();
+
+    $_SESSION['username'] = $userData['username'];
+    $_SESSION['userid'] = $userData['userid'];
+    header('location:user_page.php');
+  } else {
+    $error[] = 'Wrong username or password.';
+  }
+};
 ```
