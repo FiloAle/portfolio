@@ -17,7 +17,7 @@ export default function BlogPage() {
       </h1>
       <div className="prose prose-neutral dark:prose-invert">
         <p>
-          Here you can find some of my latest projects, ordered by the most recent.
+          Here you can find some of my latest projects, ordered by the most recent one.
         </p>
       </div>
       <hr className="my-6 border-neutral-100 dark:border-neutral-800" />
