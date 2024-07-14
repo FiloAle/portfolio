@@ -6,16 +6,16 @@ import {
 import { PreloadResources } from 'app/preload';
 import Image from 'next/image';
 import Link from 'next/link';
-import giardinoLogo from 'public/images/home/giardino_logo.png';
-import giardinoPoster from 'public/images/home/giardino_poster.png';
-import looperLogo from 'public/images/home/looper_logo.png';
-import looperPoster from 'public/images/home/looper_poster.png';
-import portorossoLogo from 'public/images/home/portorosso_logo.png';
-import portorossoTickets from 'public/images/home/portorosso_tickets.png';
-import padiglioneLogo from 'public/images/home/padiglione_logo.png';
-import padiglioneCopertina from 'public/images/home/padiglione_copertina.png';
-import heepLogo from 'public/images/home/heep_logo.png';
-import heepQubo from 'public/images/home/heep_qubo.png';
+import giardinoLogo from 'public/images/Il-Giardino-di-Lipari/logo.png';
+import giardinoPoster from 'public/images/Il-Giardino-di-Lipari/poster.png';
+import looperLogo from 'public/images/Looper/logo.png';
+import looperPoster from 'public/images/Looper/poster.png';
+import portorossoLogo from 'public/images/Portorosso/logo.png';
+import portorossoTickets from 'public/images/Portorosso/tickets.png';
+import padiglioneLogo from 'public/images/Padiglione-nel-Parco-Sempione/logo.png';
+import padiglioneCopertina from 'public/images/Padiglione-nel-Parco-Sempione/copertina.png';
+import heepLogo from 'public/images/HEEP/logo.png';
+import heepQubo from 'public/images/HEEP/qubo.png';
 
 function Badge(props) {
   return (
@@ -83,7 +83,7 @@ export default function Page() {
         Down below you can see some of my most recent projects: take a look! 👀`}
       </p>
       <div className="grid grid-cols-2 grid-rows-3 sm:grid-rows-4 sm:grid-cols-4 gap-4 my-8">
-      <Link className="group relative col-span-2 row-span-2" href="/projects/HEEP">
+        <Link className="group relative col-span-2 row-span-2" href="/projects/HEEP">
           <Image
             alt="HEEP logo"
             title="HEEP logo"
@@ -104,7 +104,7 @@ export default function Page() {
           />
         </Link>
         <Link className="group relative col-span-2 h-40" href="/projects/Il-Giardino-di-Lipari">
-        <Image
+          <Image
             alt="Il Giardino di Lipari logo"
             title="Il Giardino di Lipari logo"
             src={giardinoLogo}
@@ -164,7 +164,7 @@ export default function Page() {
           />
         </Link>
         <Link className="group relative col-span-1 sm:col-span-2 h-40 max-sm:hidden" href="/projects/Portorosso">
-        <Image
+          <Image
             alt="Portorosso logo"
             title="Portorosso logo"
             src={portorossoLogo}
