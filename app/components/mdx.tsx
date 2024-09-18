@@ -46,14 +46,14 @@ function CustomLink(props) {
 }
 
 function RoundedImage(props) {
-  return <Image alt={props.alt} className="rounded-lg" {...props} />;
+  return <Image alt={props.alt} className="rounded-xl" {...props} />;
 }
 
 function Video (props) {
   'use client'
   return (
     <div>
-      <video autoPlay muted loop playsInline width={props.width} height={props.height} controls preload="none" className="rounded-lg">
+      <video autoPlay muted loop playsInline width={props.width} height={props.height} controls preload="none" className="rounded-xl">
         <source src={'/videos/' + props.src} type="video/mp4"/>
         Your browser does not support the video tag.
       </video>

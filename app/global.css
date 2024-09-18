@@ -63,11 +63,11 @@ html {
 }
 
 .prose pre {
-  @apply bg-neutral-50 dark:bg-neutral-900 rounded-lg overflow-x-auto border border-neutral-200 dark:border-neutral-900;
+  @apply bg-neutral-50 dark:bg-neutral-900 rounded-xl overflow-x-auto border border-neutral-200 dark:border-neutral-900;
 }
 
 .prose code {
-  @apply px-1 py-0.5 rounded-lg;
+  @apply px-1 py-0.5 rounded-xl;
 }
 
 .prose pre code {

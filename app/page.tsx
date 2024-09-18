@@ -22,7 +22,7 @@ function Badge(props) {
     <a
       {...props}
       target="_blank"
-      className="inline-flex items-center rounded-full border border-neutral-200 bg-neutral-50 px-2 py-1 text-sm leading-4 text-neutral-900 no-underline dark:border-neutral-700 dark:bg-neutral-800 dark:text-neutral-100"
+      className="inline-flex items-center rounded-lg border border-neutral-200 bg-neutral-50 mx-0.5 px-2 py-1 text-sm leading-4 text-neutral-900 no-underline dark:border-neutral-700 dark:bg-neutral-800 dark:text-neutral-100"
     />
   );
 }
@@ -49,7 +49,7 @@ function BlogLink({ slug, name }) {
     <div className="group">
       <a
         href={`/projects/${slug}`}
-        className="flex w-full items-center justify-between rounded border border-neutral-200 bg-neutral-50 p-4 dark:border-neutral-700 dark:bg-neutral-800"
+        className="flex w-full items-center justify-between rounded-xl border border-neutral-200 bg-neutral-50 p-4 dark:border-neutral-700 dark:bg-neutral-800"
       >
         <div className="flex flex-col">
           <p className="font-medium text-neutral-900 dark:text-neutral-100">
@@ -72,14 +72,14 @@ export default function Page() {
       <p className="prose prose-neutral dark:prose-invert">
         {`If you don't know me yet, I'm a graphic designer and front-end developer. 👨🏻‍💻 I'm currently `}
         <Link href="/experience">studying</Link>
-        {` Communication Design at `}
+        {` Digital and Interaction Design MSc at `}
         <span className="not-prose">
           <Badge href="https://polimi.it">
             <AcademicCapIcon className="h-3.5 w-3.5 me-1" />
             Politecnico di Milano
           </Badge>
         </span>
-        {`, but don't forget I often find myself coding random things like a real geek! 🤓
+        {`, as I've already graduated in Communication Design BA! 🤓
         Down below you can see some of my most recent projects: take a look! 👀`}
       </p>
       <div className="grid grid-cols-2 grid-rows-3 sm:grid-rows-4 sm:grid-cols-4 gap-4 my-8">
@@ -91,7 +91,7 @@ export default function Page() {
             fill
             sizes="(max-width: 768px) 213px, 33vw"
             priority
-            className="opacity-100 rounded-lg object-cover sm:object-center transition-all group-hover:scale-105 group-hover:opacity-0"
+            className="opacity-100 rounded-xl object-cover sm:object-center transition-all group-hover:scale-105 group-hover:opacity-0"
           />
           <Image
             alt="A prototype of Qubo made by HEEP"
@@ -100,7 +100,7 @@ export default function Page() {
             fill
             sizes="(max-width: 768px) 213px, 33vw"
             priority
-            className="opacity-0 rounded-lg object-cover sm:object-center transition-all group-hover:scale-105 group-hover:opacity-100"
+            className="opacity-0 rounded-xl object-cover sm:object-center transition-all group-hover:scale-105 group-hover:opacity-100"
           />
         </Link>
         <Link className="group relative col-span-2 h-40" href="/projects/Il-Giardino-di-Lipari">
@@ -111,7 +111,7 @@ export default function Page() {
             fill
             sizes="(max-width: 768px) 213px, 33vw"
             priority
-            className="opacity-100 rounded-lg object-cover sm:object-center transition-all group-hover:scale-105 group-hover:opacity-0"
+            className="opacity-100 rounded-xl object-cover sm:object-center transition-all group-hover:scale-105 group-hover:opacity-0"
           />
           <Image
             alt="A visual application of Il Giardino di Lipari's brand identity"
@@ -120,7 +120,7 @@ export default function Page() {
             fill
             sizes="(max-width: 768px) 213px, 33vw"
             priority
-            className="opacity-0 rounded-lg object-cover sm:object-center transition-all group-hover:scale-105 group-hover:opacity-100"
+            className="opacity-0 rounded-xl object-cover sm:object-center transition-all group-hover:scale-105 group-hover:opacity-100"
           />
         </Link>
         <Link className="group relative col-span-1 sm:col-span-2 max-sm:h-40 row-span-2" href="/projects/Looper">
@@ -131,7 +131,7 @@ export default function Page() {
             fill
             sizes="(max-width: 768px) 213px, 33vw"
             priority
-            className="opacity-100 rounded-lg object-cover sm:object-center transition-all group-hover:scale-105 group-hover:opacity-0"
+            className="opacity-100 rounded-xl object-cover sm:object-center transition-all group-hover:scale-105 group-hover:opacity-0"
           />
           <Image
             alt="One of a series of posters made for the Looper project"
@@ -140,7 +140,7 @@ export default function Page() {
             fill
             sizes="(max-width: 768px) 213px, 33vw"
             priority
-            className="opacity-0 rounded-lg object-cover sm:object-center transition-all group-hover:scale-105 group-hover:opacity-100"
+            className="opacity-0 rounded-xl object-cover sm:object-center transition-all group-hover:scale-105 group-hover:opacity-100"
           />
         </Link>
         <Link className="group relative col-span-1 sm:col-span-2 max-sm:h-40 row-span-2" href="/projects/Padiglione-nel-Parco-Sempione">
@@ -151,7 +151,7 @@ export default function Page() {
             fill
             sizes="(max-width: 768px) 213px, 33vw"
             priority
-            className="opacity-100 rounded-lg object-cover sm:object-center transition-all group-hover:scale-105 group-hover:opacity-0"
+            className="opacity-100 rounded-xl object-cover sm:object-center transition-all group-hover:scale-105 group-hover:opacity-0"
           />
           <Image
             alt="The front cover of the book written for the project"
@@ -160,7 +160,7 @@ export default function Page() {
             fill
             sizes="(max-width: 768px) 213px, 33vw"
             priority
-            className="opacity-0 rounded-lg object-cover sm:object-center transition-all group-hover:scale-105 group-hover:opacity-100"
+            className="opacity-0 rounded-xl object-cover sm:object-center transition-all group-hover:scale-105 group-hover:opacity-100"
           />
         </Link>
         <Link className="group relative col-span-1 sm:col-span-2 h-40 max-sm:hidden" href="/projects/Portorosso">
@@ -171,7 +171,7 @@ export default function Page() {
             fill
             sizes="(max-width: 768px) 213px, 33vw"
             priority
-            className="opacity-100 rounded-lg object-cover sm:object-center transition-all group-hover:scale-105 group-hover:opacity-0"
+            className="opacity-100 rounded-xl object-cover sm:object-center transition-all group-hover:scale-105 group-hover:opacity-0"
           />
           <Image
             alt="Train tickets made for Portorosso's new brand identity"
@@ -180,7 +180,7 @@ export default function Page() {
             fill
             sizes="(max-width: 768px) 213px, 33vw"
             priority
-            className="opacity-0 rounded-lg object-cover sm:object-center transition-all group-hover:scale-105 group-hover:opacity-100"
+            className="opacity-0 rounded-xl object-cover sm:object-center transition-all group-hover:scale-105 group-hover:opacity-100"
           />
         </Link>
       </div>
@@ -195,7 +195,7 @@ export default function Page() {
       <div className="prose prose-neutral dark:prose-invert">
         <p>
           {`Over the past five years I've developed several projects both in
-          graphic design and coding fields; you'll find some along the way,
+          graphics design and coding fields; you'll find some along the way,
           but if you'd still like to see more of them just check out my personal `}
           <span className="not-prose">
             <Badge href="https://github.com/FiloAle">
@@ -223,9 +223,12 @@ export default function Page() {
       </div>
       <div className="prose prose-neutral dark:prose-invert">
         <p>
-          I've already worked with and advised a company on{' '}
+          I've also already worked with and advised a company on{' '}
           <Link href="/experience">marketing and communication</Link>, reaching
           broader audiences and building a long-lasting corporate identity.
+        </p>
+        <p>
+          Have a nice stay! ✨
         </p>
       </div>
     </section>
