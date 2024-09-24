@@ -62,9 +62,9 @@ export default function RootLayout({
         <link rel="shortcut icon" href="/images/favicon.ico" />
         <SandpackCSS />
       </head>
-      <body className="antialiased max-w-2xl mb-20 flex flex-col sm:flex-row mx-4 mt-8 sm:mx-auto">
-        <main className="flex-auto min-w-0 mt-6 flex flex-col px-2 lg:px-0">
-          <Navbar />
+      <body className="antialiased items-center max-w-2xl mb-20 flex flex-col mx-6 md:mx-auto">
+        <Navbar />
+        <main className="flex-auto w-full min-w-0 flex flex-col lg:px-0">
           {children}
           <ul className="font-sm mt-8 flex flex-col gap-2 text-neutral-600 md:flex-row md:space-x-4 md:space-y-0 dark:text-neutral-300">
             <li>

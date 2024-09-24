@@ -2,22 +2,21 @@ import Link from 'next/link';
 
 const navItems = {
   '/': {
-    name: 'home',
+    name: 'Home',
   },
   '/projects': {
-    name: 'projects',
+    name: 'Projects',
   },
   '/experience': {
-    name: 'experience',
+    name: 'Experience',
   },
 };
 
 export function Navbar() {
   return (
-    <aside className="-ml-[8px] mb-16 tracking-tight">
-      <div className="lg:sticky lg:top-20">
+    <div className="w-full mb-16 pt-6 min-[480px]:pt-10 tracking-tight sticky top-0 bg-white dark:bg-[#111010] rounded-b-xl z-50">
         <nav
-          className="flex flex-row items-start relative px-0 pb-0 fade md:overflow-auto scroll-pr-6 md:relative"
+          className="flex flex-row items-start relative p-3 fade md:overflow-auto scroll-pr-6 rounded-xl border border-neutral-200 bg-neutral-50 dark:border-neutral-700 dark:bg-neutral-800 shadow-lg dark:shadow-2xl"
           id="nav"
         >
           <div className="flex flex-row space-x-0 pr-10">
@@ -34,7 +33,6 @@ export function Navbar() {
             })}
           </div>
         </nav>
-      </div>
-    </aside>
+    </div>
   );
 }

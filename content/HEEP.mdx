@@ -44,7 +44,15 @@ while helping the global community, at the same time, in reaching its goal.
 ## Programming Arduino and its WebApp
 
 We, as HEEP, have also realized a proper working prototype of Qubo using Arduino and other technologies such as PHP to create the relative WebApp.
-More specifically, I've managed to develop the software that powers it all. Here you can take a look at some code snippets from the project:
+More specifically, I've managed to develop the software that powers it all. Here you can take a look at some pictures and code snippets from the project:
+
+<Image
+  alt={`Functioning Qubo prototype`}
+  title={`Functioning Qubo prototype`}
+  src={`/images/HEEP/qubo_2.jpg`}
+  width={5228}
+  height={3485}
+/>
 
 ```cpp
 if(digitalRead(15) == HIGH) {
@@ -68,9 +76,9 @@ if(digitalRead(15) == HIGH) {
 }
 ```
 
-This is an extract of code from QuboScreen, a module of the prototype based on ESP32 that sends Qubo's electric production data to a database.
-The database has a key role in making the experience feel complete, in fact it stores a series of informations that every user
-can freely access from their personal area on <a href="https://heepenergia.it" rel="noopener noreferrer" target="_blank">heepenergia.it</a>,
+This is an extract of code from QuboScreen, a module of the prototype based on ESP32 (the orange one in the previous picture) that sends Qubo's electric
+production data to a database. The database has a key role in making the experience feel complete, in fact it stores a series of informations that every
+user can freely access from their personal area on <a href="https://heepenergia.it" rel="noopener noreferrer" target="_blank">heepenergia.it</a>,
 a sort of a WebApp currently optimized for mobile displays only. By registering on the website, each user is able associate their personal Qubo 
 usage session with their own account and see the statistics being updated in real time, thanks to QuboScreen and its database integration.
 
