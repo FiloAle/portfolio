@@ -72,7 +72,7 @@ export default function Page() {
           {` `}
           <span className="text-neutral-900  dark:text-neutral-100 font-medium">the key is in the details</span>
           {` `}
-          and I'm not done until everything works like I want it to: that's why I'm always satisfied
+          and I'm not done until everything works like I want it to: that's why I'm (almost) always satisfied
           with my projects' outcomes.
         </p>
 
