@@ -4,6 +4,7 @@ import Link from 'next/link';
 import giardinoLogo from 'public/images/Il-Giardino-di-Lipari/poster.png';
 import looperLogo from 'public/images/Looper/sito.png';
 import heepLogo from 'public/images/HEEP/qubo.png';
+import { EditPencil, SquareCursorSolid, Message } from 'iconoir-react';
 
 function Badge(props) {
   return (
@@ -84,6 +85,12 @@ export default function Page() {
           </span>
           {`, as I've graduated in Communication Design BA in 2024.`}
         </p>
+      </div>
+
+      <div className="mt-12 mb-14 w-full">
+        <a className="w-max h-full px-6 py-3.5 rounded-full transition-all duration-300 bg-neutral-800 hover:bg-neutral-700 dark:bg-neutral-50 dark:hover:bg-neutral-200 text-neutral-50  dark:text-neutral-800 flex flex-row items-center justify-center gap-1 font-medium shadow-lg dark:shadow-neutral-900 hover:shadow-xl" href="mailto:ciao@filippoalessandrini.com">
+          <Message className="h-[18px] -mt-[1.5px] -ms-1" strokeWidth={2.2}/> Get in touch
+        </a>
       </div>
 
       <div className="my-10 flex w-full flex-col space-y-4">

@@ -60,8 +60,11 @@ export default function RootLayout({
       </head>
       <body className="antialiased items-center max-w-xl flex flex-col">
         <Navbar />
-        <main className="flex-auto w-lvw min-w-0 flex flex-col px-6 max-w-xl sm:px-0 max-sm:pt-40 pt-48 pb-24">
+        <main className="flex-auto w-lvw min-w-0 flex flex-col px-6 max-w-xl sm:px-0 max-sm:pt-36 pt-48 pb-24">
           {children}
+
+          {/* TODO: Add footer (only on mobile) with links to IG, email, buymeacoffee */}
+
           <div className="font-sm mt-16">
             <p className="text-black dark:text-white opacity-30">
               © {new Date().getFullYear()} Filippo Alessandrini.
