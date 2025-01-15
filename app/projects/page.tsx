@@ -11,16 +11,16 @@ export default function BlogPage() {
   let allBlogs = getBlogPosts();
 
   return (
-    <section>
+    <section className="w-full">
       <h1 className="font-medium text-2xl mb-8">
         My recent projects
       </h1>
       <div className="prose prose-neutral dark:prose-invert">
         <p>
-          Here you can find some of my latest projects, ordered by the most recent one.
+          Here you can find some of my latest design projects, ordered by the most recent one.
         </p>
       </div>
-      <hr className="my-6 border-neutral-100 dark:border-neutral-800" />
+      <hr className="my-6 border-neutral-100 dark:border-neutral-800"/>
       {allBlogs
         .sort((a, b) => {
           if (

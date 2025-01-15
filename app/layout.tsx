@@ -3,11 +3,7 @@ import { GeistSans } from 'geist/font/sans';
 import type { Metadata } from 'next';
 import { SandpackCSS } from './projects/[slug]/sandpack';
 import { Navbar } from './components/nav';
-import {
-  CheckBadgeIcon,
-  EnvelopeIcon,
-  HeartIcon,
-} from '@heroicons/react/24/solid';
+
 import './global.css';
 
 export const metadata: Metadata = {
@@ -53,7 +49,7 @@ export default function RootLayout({
     <html
       lang="en"
       className={cx(
-        'text-black bg-white dark:text-white dark:bg-[#111010]',
+        'text-black bg-white dark:text-white dark:bg-[#111010] px-6 flex flex-col items-center',
         GeistSans.variable,
         GeistMono.variable,
       )}
@@ -62,47 +58,13 @@ export default function RootLayout({
         <link rel="shortcut icon" href="/images/favicon.ico" />
         <SandpackCSS />
       </head>
-      <body className="antialiased items-center max-w-2xl mb-20 flex flex-col mx-6 md:mx-auto">
+      <body className="antialiased items-center max-w-xl flex flex-col">
         <Navbar />
-        <main className="flex-auto w-full min-w-0 flex flex-col lg:px-0">
+        <main className="flex-auto w-lvw min-w-0 flex flex-col px-6 max-w-xl sm:px-0 max-sm:pt-40 pt-48 pb-24">
           {children}
-          <ul className="font-sm mt-8 flex flex-col gap-2 text-neutral-600 md:flex-row md:space-x-4 md:space-y-0 dark:text-neutral-300">
-            <li>
-              <a
-                className="flex items-center transition-all hover:text-blue-600 dark:hover:text-blue-400"
-                rel="noopener noreferrer"
-                target="_blank"
-                href="https://instagram.com/_filippoalessandrini_"
-              >
-                <CheckBadgeIcon className="h-4 w-4 mb-1" />
-                <p className="ml-1 h-7">follow me</p>
-              </a>
-            </li>
-            <li>
-              <a
-                className="flex items-center transition-all hover:text-amber-600 dark:hover:text-amber-400"
-                rel="noopener noreferrer"
-                href="mailto:ciao@filippoalessandrini.com"
-              >
-                <EnvelopeIcon className="h-4 w-4 mb-1" />
-                <p className="ml-1 h-7">text me</p>
-              </a>
-            </li>
-            <li>
-              <a
-                className="flex items-center transition-all hover:text-red-600 dark:hover:text-red-400"
-                rel="noopener noreferrer"
-                target="_blank"
-                href="https://buymeacoffee.com/filippoalessandrini"
-              >
-                <HeartIcon className="h-4 w-4 mb-1" />
-                <p className="ml-1 h-7">buy me a coffee</p>
-              </a>
-            </li>
-          </ul>
           <div className="font-sm mt-16">
             <p className="text-black dark:text-white opacity-30">
-              © 2024 Filippo Alessandrini.
+              © {new Date().getFullYear()} Filippo Alessandrini.
             </p>
           </div>
         </main>

@@ -11,9 +11,7 @@ export default function ExperiencePage() {
       <h1 className="font-medium text-2xl mb-8">My experience so far</h1>
       <div className="prose prose-neutral dark:prose-invert">
         <p>
-          On a mission to build products both my clients and their users{' '}
-          love and, along the way, shape the future of web and graphic design.
-          Here's a summary of my experiences so far.
+          Here's a summary of knowledge and skills I have learnt and developed so far.
         </p>
         <hr className="my-6 border-neutral-100 dark:border-neutral-800" />
         <h2 className="font-medium text-xl mb-1 tracking-tighter">Politecnico di Milano</h2>
