@@ -4,7 +4,7 @@ import Link from 'next/link';
 import giardinoLogo from 'public/images/Il-Giardino-di-Lipari/poster.png';
 import looperLogo from 'public/images/Looper/sito.png';
 import heepLogo from 'public/images/HEEP/qubo.png';
-import { EditPencil, SquareCursorSolid, Message } from 'iconoir-react';
+import { ChatLines } from 'iconoir-react';
 
 function Badge(props) {
   return (
@@ -73,7 +73,7 @@ export default function Page() {
           <span className="text-neutral-900  dark:text-neutral-100 font-medium">the key is in the details</span>
           {` `}
           and I'm not done until everything works like I want it to: that's why I'm (almost) always satisfied
-          with my projects' outcomes.
+          with my projects' outcomes!
         </p>
 
         <p>
@@ -89,7 +89,7 @@ export default function Page() {
 
       <div className="mt-12 mb-14 w-full">
         <a className="w-max h-full px-6 py-3.5 rounded-full transition-all duration-300 bg-neutral-800 hover:bg-neutral-700 dark:bg-neutral-50 dark:hover:bg-neutral-200 text-neutral-50  dark:text-neutral-800 flex flex-row items-center justify-center gap-1 font-medium shadow-lg dark:shadow-neutral-900 hover:shadow-xl" href="mailto:ciao@filippoalessandrini.com">
-          <Message className="h-[18px] -mt-[1.5px] -ms-1" strokeWidth={2.2}/> Get in touch
+          <ChatLines className="h-[18px] -mt-[3px] -ms-1" strokeWidth={2.2}/> Get in touch
         </a>
       </div>
 
