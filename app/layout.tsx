@@ -49,7 +49,7 @@ export default function RootLayout({
     <html
       lang="en"
       className={cx(
-        'text-black bg-white dark:text-white dark:bg-[#111010] px-6 flex flex-col items-center',
+        'text-black bg-neutral-50 dark:text-white dark:bg-neutral-950 px-6 flex flex-col items-center',
         GeistSans.variable,
         GeistMono.variable,
       )}
@@ -58,7 +58,7 @@ export default function RootLayout({
         <link rel="shortcut icon" href="/images/favicon.ico" />
         <SandpackCSS />
       </head>
-      <body className="antialiased items-center max-w-xl flex flex-col">
+      <body className="antialiased items-center flex flex-col">
         <Navbar />
         <main className="flex-auto w-lvw min-w-0 flex flex-col px-6 max-w-xl sm:px-0 max-sm:pt-36 pt-48 pb-24">
           {children}
