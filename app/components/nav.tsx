@@ -27,7 +27,7 @@ export function Navbar() {
       <div className="w-full h-16 sm:h-24 xs:max-sm:opacity-0 -mt-1 backdrop-blur-2xl bg-neutral-50 dark:bg-neutral-950"/>
 
       <div className="w-full h-full flex justify-center max-sm:px-6">
-        <div className="max-w-xl w-full h-full xs:max-sm:w-max -mt-8 backdrop-blur-2xl rounded-full flex flex-row items-center justify-center">
+        <div className="max-w-xl w-full h-full xxs:max-sm:w-max -mt-8 backdrop-blur-2xl rounded-full flex flex-row items-center justify-center">
           <nav
             className="w-full px-3.5 py-3.5 sm:py-[0.8rem] rounded-full border border-neutral-200 bg-neutral-50 dark:border-neutral-700 dark:bg-neutral-800 opacity-80 shadow-lg dark:shadow-2xl"
             id="nav"
@@ -35,17 +35,17 @@ export function Navbar() {
             <div className="flex flex-row items-center gap-2 justify-between">
               <NavButton href="/">
                 <HomeSimpleDoor className='max-sm:pb-[4px] pb-[1px]' height={22}/>
-                <span className='max-sm:pt-[2px]'>Home</span>
+                <span className='max-sm:pt-[2px] max-xxs:hidden'>Home</span>
               </NavButton>
 
               <NavButton href="/projects">
                 <AppleShortcuts className='max-sm:pb-[4px] pb-[1px]' height={22}/>
-                <span className='max-sm:pt-[2px]'>Projects</span>
+                <span className='max-sm:pt-[2px] max-xxs:hidden'>Projects</span>
               </NavButton>
 
               <NavButton href="/experience">
                 <Post className='max-sm:pb-[4px] pb-[1px]' height={22}/>
-                <span className='max-sm:pt-[2px]'>Experience</span>
+                <span className='max-sm:pt-[2px] max-xxs:hidden'>Experience</span>
               </NavButton>
 
               <div className="max-sm:hidden flex flex-row items-center gap-2">
