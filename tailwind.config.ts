@@ -18,7 +18,7 @@ export default {
         },
       },
       screens: {
-        'xxs': '360px',
+        'xxs': '390px',
         'xs': '512px',
       }
     },

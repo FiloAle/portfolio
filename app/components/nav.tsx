@@ -27,7 +27,7 @@ export function Navbar() {
       <div className="w-full h-16 sm:h-24 xs:max-sm:opacity-0 -mt-1 backdrop-blur-2xl bg-neutral-50 dark:bg-neutral-950"/>
 
       <div className="w-full h-full flex justify-center max-sm:px-6">
-        <div className="max-w-xl w-full h-full xs:max-sm:w-max -mt-8 backdrop-blur-2xl rounded-full flex flex-row items-center justify-center">
+        <div className="max-w-xl w-full h-full max-xxs:w-max xs:max-sm:w-max -mt-8 backdrop-blur-2xl rounded-full flex flex-row items-center justify-center">
           <nav
             className="w-full px-3.5 py-3.5 sm:py-[0.8rem] rounded-full border border-neutral-200 bg-neutral-50 dark:border-neutral-700 dark:bg-neutral-800 opacity-80 shadow-lg dark:shadow-2xl"
             id="nav"
