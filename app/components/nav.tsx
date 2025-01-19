@@ -24,7 +24,7 @@ export function Navbar() {
   return (
     <div className="w-lvw tracking-tight fixed top-0 z-50">
 
-      <div className="w-full h-16 sm:h-24 xs:max-sm:opacity-0 -mt-1 backdrop-blur-2xl bg-neutral-50 dark:bg-neutral-950"/>
+      <div className="w-full h-16 sm:h-24 max-xxs:opacity-0 xs:max-sm:opacity-0 -mt-1 backdrop-blur-2xl bg-neutral-50 dark:bg-neutral-950"/>
 
       <div className="w-full h-full flex justify-center max-sm:px-6">
         <div className="max-w-xl w-full h-full max-xxs:w-max xs:max-sm:w-max -mt-8 backdrop-blur-2xl rounded-full flex flex-row items-center justify-center">
