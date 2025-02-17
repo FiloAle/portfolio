@@ -2,7 +2,7 @@ import { PreloadResources } from 'app/preload';
 import Image from 'next/image';
 import Link from 'next/link';
 import giardinoLogo from 'public/images/Il-Giardino-di-Lipari/poster.png';
-import looperLogo from 'public/images/Looper/sito.png';
+import padiglione from 'public/images/Padiglione-nel-Parco-Sempione/copertina.png';
 import heepLogo from 'public/images/HEEP/qubo.png';
 import { ChatLines } from 'iconoir-react';
 
@@ -100,9 +100,9 @@ export default function Page() {
           img={heepLogo}
         />
         <BlogLink
-          name="The making of Looper"
-          slug="Looper" 
-          img={looperLogo}
+          name="Padiglione nel Parco Sempione"
+          slug="Padiglione-nel-Parco-Sempione" 
+          img={padiglione}
         />
         <BlogLink
           name="Il Giardino di Lipari's brand identity"
